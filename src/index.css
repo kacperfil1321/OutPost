@@ -1,0 +1,125 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  /* Modern Palette - Light Mode Default */
+  --primary: #FFCC00;
+  /* OutPost Yellow-ish */
+  --primary-hover: #E6B800;
+  --text-main: #1A1A1A;
+  --text-secondary: #666666;
+  --bg-main: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --border: #E0E0E0;
+
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+}
+
+/* Dark Mode - System Preference OR Explicit Class */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-main: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --bg-main: #121212;
+    --bg-secondary: #1E1E1E;
+    --border: #333333;
+  }
+}
+
+/* Force Dark Mode */
+body.dark {
+  --text-main: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --bg-main: #121212;
+  --bg-secondary: #1E1E1E;
+  --border: #333333;
+}
+
+/* Force Light Mode (Override Dark System Pref) */
+body.light {
+  --text-main: #1A1A1A;
+  --text-secondary: #666666;
+  --bg-main: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --border: #E0E0E0;
+}
+
+/* High Contrast Class to be toggled */
+body.contrast {
+  --primary: #FFFF00;
+  --text-main: #FFFFFF;
+  --text-secondary: #DDDDDD;
+  --bg-main: #000000;
+  --bg-secondary: #000000;
+  --border: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  /* Remove display:flex on body which can cause alignment issues if not handled carefully */
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#root {
+  width: 100%;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: var(--text-main);
+}
+
+button:hover {
+  border-color: var(--primary);
+}
+
+button.primary {
+  background-color: var(--primary);
+  color: #000;
+  /* Always black on yellow */
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.6em;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
