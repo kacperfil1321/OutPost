@@ -7,6 +7,6 @@ export default defineConfig({
 })
 
 export default defineConfig({
-  base: '/nazwa-twojego-repozytorium/', // To jest kluczowe!
+  base: '/nazwa-twojego-repozytorium/',
   plugins: [react()],
 })
