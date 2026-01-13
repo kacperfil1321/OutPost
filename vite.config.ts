@@ -7,6 +7,6 @@ export default defineConfig({
 })
 
 export default defineConfig({
-  base: '/nazwa-twojego-repozytorium/',
+  base: '/OutPost/',
   plugins: [react()],
 })
