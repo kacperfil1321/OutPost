@@ -115,7 +115,9 @@ const router = createBrowserRouter([
       },
     ]
   }
-]);
+], {
+  basename: import.meta.env.BASE_URL // This will use the 'base' from vite.config.ts
+});
 
 import { useEffect } from 'react';
 import { useStore } from './store';
